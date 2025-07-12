@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VRK Tours and Travels (P) Ltd - Premium Transportation Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Noto+Sans+Tamil&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#059669',
+                        accent: '#F59E0B',
+                        dark: '#1F2937',
+                        light: '#F9FAFB',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        heading: ['Playfair Display', 'serif'],
+                        tamil: ['Noto Sans Tamil', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* English font sizes */
+        :root {
+            --text-xs: clamp(0.75rem, 0.75vw, 0.8125rem);
+            --text-sm: clamp(0.875rem, 0.875vw, 1rem);
+            --text-base: clamp(1rem, 1.125vw, 1.125rem);
+            --text-lg: clamp(1.125rem, 1.25vw, 1.25rem);
+            --text-xl: clamp(1.25rem, 1.5vw, 1.5rem);
+            --text-2xl: clamp(1.5rem, 2vw, 1.75rem);
+            --text-3xl: clamp(1.875rem, 2.5vw, 2.25rem);
+            --text-4xl: clamp(2.25rem, 3vw, 3rem);
+            --text-5xl: clamp(3rem, 4vw, 3.75rem);
+        }
+
+        /* Tamil font sizes - slightly larger */
+        :root[lang="ta"] {
+            --text-xs: clamp(0.65rem, 0.65vw, 0.8025rem);
+            --text-sm: clamp(0.725rem, 0.725vw, 0.5rem);
+            --text-base: clamp(0.5rem, 1vw, 1rem);
+            --text-lg: clamp(1.1rem, 1.2vw, 1.2rem);
+            --text-xl: clamp(1.2rem, 1.3vw, 1.3rem);
+            --text-2xl: clamp(1.5rem, 2vw, 1.75rem);
+            --text-3xl: clamp(1.9rem, 2.5vw, 2.25rem);
+            --text-4xl: clamp(2rem, 2.75vw, 2.75rem);
+            --text-5xl: clamp(2.75rem, 3.1vw, 2.85rem);
+        }
+
+        html {
+            font-size: var(--text-base);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            font-size: var(--text-base);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        h1 {
+            font-size: var(--text-4xl);
+        }
+
+        h2 {
+            font-size: var(--text-3xl);
+        }
+
+        h3 {
+            font-size: var(--text-2xl);
+        }
+
+        h4 {
+            font-size: var(--text-xl);
+        }
+
+        h5 {
+            font-size: var(--text-lg);
+        }
+
+        h6 {
+            font-size: var(--text-base);
+        }
+
+        /* Tamil-specific styles */
+        html[lang="ta"] body {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            direction: ltr;
+            /* Changed from rtl to ltr for Tamil */
+            line-height: 1.8;
+        }
+
+        html[lang="ta"] input,
+        html[lang="ta"] select,
+        html[lang="ta"] textarea,
+        html[lang="ta"] button {
+            font-size: 1.1em;
+        }
+
+        .hero-pattern {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url('./hero.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .vehicle-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #F59E0B;
+            transition: width 0.3s;
+        }
+
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .text-shadow {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .route-card:hover .route-image {
+            transform: scale(1.05);
+            transition: transform 0.5s ease;
+        }
+
+        .route-image {
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Language Toggle Styles */
+        .language-toggle {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            margin: 0 10px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #2563EB;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.toggle-slider {
+            background-color: #059669;
+        }
+
+        input:checked+.toggle-slider:before {
+            transform: translateX(30px);
+        }
+
+        .language-label {
+            font-weight: 500;
+            color: #1F2937;
+            font-size: var(--text-sm);
+        }
+
+        .active-language {
+            color: #2563EB;
+            font-weight: 600;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            :root {
+                --text-xs: clamp(0.7rem, 0.8vw, 0.8rem);
+                --text-sm: clamp(0.8rem, 0.9vw, 0.9rem);
+                --text-base: clamp(0.9rem, 1vw, 1rem);
+                --text-lg: clamp(1rem, 1.1vw, 1.1rem);
+                --text-xl: clamp(1.1rem, 1.3vw, 1.3rem);
+                --text-2xl: clamp(1.3rem, 1.6vw, 1.6rem);
+                --text-3xl: clamp(1.6rem, 2vw, 2rem);
+                --text-4xl: clamp(2rem, 2.5vw, 2.5rem);
+                --text-5xl: clamp(2.5rem, 3vw, 3rem);
+            }
+
+            :root[lang="ta"] {
+                --text-xs: clamp(0.75rem, 0.85vw, 0.85rem);
+                --text-sm: clamp(0.85rem, 0.95vw, 0.95rem);
+                --text-base: clamp(0.95rem, 1.1vw, 1.1rem);
+                --text-lg: clamp(1.1rem, 1.2vw, 1.2rem);
+                --text-xl: clamp(1.2rem, 1.4vw, 1.4rem);
+                --text-2xl: clamp(1.4rem, 1.7vw, 1.7rem);
+                --text-3xl: clamp(1.7rem, 2.1vw, 2.1rem);
+                --text-4xl: clamp(2.1rem, 2.6vw, 2.6rem);
+                --text-5xl: clamp(2.6rem, 3.1vw, 3.1rem);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-light text-dark">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50 heading-font">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="#home" class="text-2xl md:text-1xl font-bold text-primary flex items-center heading-font">
+                        <img src="./icon.jpeg" alt="" srcset="" width="35px" height="35px">
+                        <span class="hidden sm:inline" data-i18n="companyName">VRK Tours & Travels</span>
+                        <span class="sm:hidden">VRK</span>
+                    </a>
+                </div>
+
+                <div class="flex items-center">
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#home" class="nav-link text-dark hover:text-primary font-medium"
+                            data-i18n="home">Home</a>
+                        <a href="#services" class="nav-link text-dark hover:text-primary font-medium"
+                            data-i18n="services">Services</a>
+                        <a href="#fleet" class="nav-link text-dark hover:text-primary font-medium"
+                            data-i18n="fleet">Fleet</a>
+                        <a href="#routes" class="nav-link text-dark hover:text-primary font-medium"
+                            data-i18n="routes">Routes</a>
+                        <a href="#about" class="nav-link text-dark hover:text-primary font-medium"
+                            data-i18n="about">About Us</a>
+                    </div>
+
+                    <!-- Language Toggle -->
+                    <div class="language-toggle">
+                        <span class="language-label active-language" id="en-label">EN</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="language-toggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <span class="language-label" id="ta-label">தமிழ்</span>
+                    </div>
+
+                    <a href="#contact"
+                        class="hidden md:block bg-accent text-white px-6 py-2 rounded-full hover:bg-yellow-600 transition duration-300 font-medium ml-4"
+                        data-i18n="contact">
+                        <i class="fas fa-phone-alt mr-2 transform rotate-90"></i> <span
+                            data-i18n="contact">Contact</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="menu-toggle"
+                        class="text-white text-sm px-4 py-2 bg-primary rounded-full hover:bg-accent">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 text-dark hover:text-primary" data-i18n="home">Home</a>
+                <a href="#services" class="block py-2 text-dark hover:text-primary" data-i18n="services">Services</a>
+                <a href="#fleet" class="block py-2 text-dark hover:text-primary" data-i18n="fleet">Fleet</a>
+                <a href="#routes" class="block py-2 text-dark hover:text-primary" data-i18n="routes">Routes</a>
+                <a href="#about" class="block py-2 text-dark hover:text-primary" data-i18n="about">About Us</a>
+                <div class="language-toggle mt-4 mb-4 justify-center">
+                    <span class="language-label active-language" id="mobile-en-label">EN</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="mobile-language-toggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <span class="language-label" id="mobile-ta-label">தமிழ்</span>
+                </div>
+                <a href="#contact"
+                    class="mt-2 bg-accent text-white px-6 py-2 rounded-full hover:bg-yellow-600 transition duration-300 w-full inline-block text-center"
+                    data-i18n="contact">
+                    <i class="fas fa-phone mr-2 transform rotate-90"></i> <span data-i18n="contact">Contact</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-pattern pt-32 pb-20 text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6 heading-font text-shadow"
+                        data-i18n="premiumServices">
+                        Premium Cab & Bus Services by
+                        <span class="text-accent">VRK Tours & Travels</span>
+                    </h1>
+                    <p class="text-lg mb-8 opacity-90" data-i18n="safeReliable">
+                        Safe, reliable, and comfortable transportation for all your travel needs.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#booking"
+                            class="bg-accent text-white px-8 py-3 rounded-full font-medium hover:bg-yellow-600 transition duration-300 text-center">
+                            <i class="fas fa-calendar-alt mr-2"></i> <span data-i18n="bookNow">Book Now</span>
+                        </a>
+                        <a href="tel:+919876543210"
+                            class="border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-dark transition duration-300 flex items-center justify-center">
+                            <i class="fas fa-phone mr-2"></i> <span data-i18n="callForQuote">Call for Quote</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div
+                        class="bg-white p-6 rounded-lg shadow-xl max-w-md ml-auto transform hover:scale-105 transition duration-300">
+                        <h3 class="text-xl font-bold text-dark mb-4 heading-font" data-i18n="getQuickQuote">Get a Quick
+                            Quote</h3>
+                        <form id="booking" action="https://formsubmit.co/info@vrktours.com" method="POST">
+                            <input type="hidden" name="_subject" value="New Booking Inquiry">
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-gray-600 mb-2" data-i18n="vehicleType">Vehicle Type</label>
+                                    <select name="vehicle_type"
+                                        class="w-full text-black px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                                        required>
+                                        <option value="" data-i18n="selectVehicle">Select Vehicle</option>
+                                        <option data-i18n="miniSedan">Mini Sedan (4 seater)</option>
+                                        <option data-i18n="luxurySedan">Luxury Sedan (4 seater)</option>
+                                        <option data-i18n="suv">SUV (6 seater)</option>
+                                        <option data-i18n="tempoTraveler">Tempo Traveler (12 seater)</option>
+                                    </select>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-gray-600 mb-2" data-i18n="pickupDate">Pickup
+                                            Date</label>
+                                        <input type="date" name="pickup_date"
+                                            class="w-full text-black py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                                            required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-600 mb-2" data-i18n="returnDate">Return
+                                            Date</label>
+                                        <input type="date" name="return_date"
+                                            class="w-full text-black px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-600 mb-2" data-i18n="pickupLocation">Pickup
+                                        Location</label>
+                                    <input type="text" name="pickup_location" data-i18n="pickupLocationPlaceholder" placeholder="Enter pickup location"
+                                        class="w-full text-black px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                                        required>
+                                </div>
+                                <button type="submit"
+                                    class="bg-accent text-white px-4 py-2 rounded-full bg-primary text-white w-full py-3 rounded-lg hover:bg-blue-700 transition duration-300 font-medium"
+                                    data-i18n="getQuote">
+                                    Get Quote
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Our Fleet -->
+    <section id="fleet" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 heading-font" data-i18n="ourFleet">Our Fleet</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="fleetDescription">Modern, well-maintained vehicles
+                    for every need</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Vehicle 1 - Mini Sedan -->
+                <div
+                    class="vehicle-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <img src="./Mini_Sedan.jpeg" alt="Mini Sedan" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 heading-font" data-i18n="miniSedan">Mini Sedan</h3>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <div class="flex mr-4">
+                                <i class="fas fa-users mr-2 text-accent"></i>
+                                <span data-i18n="passengers4">4 Passengers</span>
+                            </div>
+                            <div class="flex">
+                                <i class="fas fa-suitcase mr-2 text-accent"></i>
+                                <span data-i18n="bags2">2 Bags</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-gray-400" data-i18n="startingFrom">Starting from</span>
+                            <span class="text-primary font-bold text-xl">₹13/km</span>
+                        </div>
+                        <a href="#booking"
+                            class="block bg-primary text-white w-full py-2 rounded-lg hover:bg-blue-700 transition duration-300 text-center"
+                            data-i18n="bookNow">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Vehicle 2 - Luxury Sedan -->
+                <div
+                    class="vehicle-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <img src="./Sedan.jpeg" alt="Luxury Sedan" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 heading-font" data-i18n="luxurySedan">Luxury Sedan</h3>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <div class="flex mr-4">
+                                <i class="fas fa-users mr-2 text-accent"></i>
+                                <span data-i18n="passengers4">4 Passengers</span>
+                            </div>
+                            <div class="flex">
+                                <i class="fas fa-suitcase mr-2 text-accent"></i>
+                                <span data-i18n="bags3">3 Bags</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-gray-400" data-i18n="startingFrom">Starting from</span>
+                            <span class="text-primary font-bold text-xl">₹15/km</span>
+                        </div>
+                        <a href="#booking"
+                            class="block bg-primary text-white w-full py-2 rounded-lg hover:bg-blue-700 transition duration-300 text-center"
+                            data-i18n="bookNow">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Vehicle 3 - Premium SUV -->
+                <div
+                    class="vehicle-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <img src="https://images.pexels.com/photos/104401/pexels-photo-104401.jpeg?cs=srgb&dl=pexels-mikebirdy-104401.jpg&fm=jpg"
+                        alt="Premium SUV" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 heading-font" data-i18n="premiumSUV">Premium SUV</h3>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <div class="flex mr-4">
+                                <i class="fas fa-users mr-2 text-accent"></i>
+                                <span data-i18n="passengers6">6 Passengers</span>
+                            </div>
+                            <div class="flex">
+                                <i class="fas fa-suitcase mr-2 text-accent"></i>
+                                <span data-i18n="bags5">5 Bags</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-gray-400" data-i18n="startingFrom">Starting from</span>
+                            <span class="text-primary font-bold text-xl">₹20/km</span>
+                        </div>
+                        <a href="#booking"
+                            class="block bg-primary text-white w-full py-2 rounded-lg hover:bg-blue-700 transition duration-300 text-center"
+                            data-i18n="bookNow">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Vehicle 4 - Tempo Traveler -->
+                <div
+                    class="vehicle-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <img src="https://srikateeltravels.com/wp-content/uploads/2021/06/Hire-Tempo-Traveller.jpg"
+                        alt="Tempo Traveler" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 heading-font" data-i18n="tempoTraveler">Tempo Traveler</h3>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <div class="flex mr-4">
+                                <i class="fas fa-users mr-2 text-accent"></i>
+                                <span data-i18n="passengers13">13 Passengers</span>
+                            </div>
+                            <div class="flex">
+                                <i class="fas fa-suitcase mr-2 text-accent"></i>
+                                <span data-i18n="bags8">8 Bags</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-gray-400" data-i18n="startingFrom">Starting from</span>
+                            <span class="text-primary font-bold text-xl">₹18/km</span>
+                        </div>
+                        <a href="#booking"
+                            class="block bg-primary text-white w-full py-2 rounded-lg hover:bg-blue-700 transition duration-300 text-center"
+                            data-i18n="bookNow">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Vehicle 5 - Mini Bus -->
+                <div
+                    class="vehicle-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <img src="https://www.delhitempotravellers.com/images/14seater.jpg" alt="Mini Bus"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 heading-font" data-i18n="miniBus">Mini Bus</h3>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <div class="flex mr-4">
+                                <i class="fas fa-users mr-2 text-accent"></i>
+                                <span data-i18n="passengers12">12 Passengers</span>
+                            </div>
+                            <div class="flex">
+                                <i class="fas fa-suitcase mr-2 text-accent"></i>
+                                <span data-i18n="bags10">10 Bags</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-gray-400" data-i18n="startingFrom">Starting from</span>
+                            <span class="text-primary font-bold text-xl">₹30/km</span>
+                        </div>
+                        <a href="#booking"
+                            class="block bg-primary text-white w-full py-2 rounded-lg hover:bg-blue-700 transition duration-300 text-center"
+                            data-i18n="bookNow">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Vehicle 6 - View All Placeholder -->
+                <div
+                    class="vehicle-card bg-gradient-to-br from-primary to-secondary rounded-xl overflow-hidden shadow-md flex items-center justify-center">
+                    <div class="text-center p-6">
+                        <i class="fas fa-car-side text-white text-5xl mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2 heading-font" data-i18n="moreVehicles">More
+                            Vehicles Available</h3>
+                        <p class="text-white opacity-90 mb-4" data-i18n="wideRange">We have a wide range of vehicles to
+                            suit all your needs</p>
+                        <a href="#fleet"
+                            class="inline-block bg-white text-primary px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition duration-300"
+                            data-i18n="viewFleet">
+                            View Full Fleet
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Routes -->
+    <section id="routes" class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 heading-font" data-i18n="popularRoutes">Popular Routes</h2>
+                <p class="opacity-90 max-w-2xl mx-auto" data-i18n="routesDescription">Frequently traveled routes with
+                    special discounts</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Route 1 - Chennai to Coimbatore -->
+                <div
+                    class="route-card bg-white rounded-xl overflow-hidden shadow-lg text-dark hover:shadow-xl transition duration-300">
+                    <div class="relative overflow-hidden">
+                        <img src="https://media1.thrillophilia.com/filestore/0w5pnuh3qwqx9gy3cj3gn2bsefj3_shutterstock_1435846292.jpg"
+                            alt="Chennai to Coimbatore" class="w-full h-48 object-cover route-image">
+                        <div class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-medium"
+                            data-i18n="dailyService">
+                            Daily Service
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 heading-font" data-i18n="chennaiCoimbatore">Chennai to
+                            Coimbatore</h3>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i class="fas fa-road mr-2 text-primary"></i>
+                            <span>500 km</span>
+                            <i class="fas fa-clock ml-4 mr-2 text-primary"></i>
+                            <span data-i18n="hours8">8 hours</span>
+                        </div>
+                        <div class="text-center py-3">
+                            <a href="#contact"
+                                class="inline-block bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition duration-300"
+                                data-i18n="contactPrice">
+                                <i class="fas fa-phone-alt mr-2 transform rotate-90"></i> Contact for Price
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Route 2 - Chennai to Ooty -->
+                <div
+                    class="route-card bg-white rounded-xl overflow-hidden shadow-lg text-dark hover:shadow-xl transition duration-300">
+                    <div class="relative overflow-hidden">
+                        <img src="https://www.india.com/wp-content/uploads/2018/08/ooty-2-1.jpg" alt="Chennai to Ooty"
+                            class="w-full h-48 object-cover route-image">
+                        <div class="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium"
+                            data-i18n="hillSpecial">
+                            Hill Station Special
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 heading-font" data-i18n="chennaiOoty">Chennai to Ooty</h3>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i class="fas fa-road mr-2 text-primary"></i>
+                            <span>535 km</span>
+                            <i class="fas fa-clock ml-4 mr-2 text-primary"></i>
+                            <span data-i18n="hours9">9.5 hours</span>
+                        </div>
+                        <div class="text-center py-3">
+                            <a href="#contact"
+                                class="inline-block bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition duration-300"
+                                data-i18n="contactPrice">
+                                <i class="fas fa-phone-alt mr-2 transform rotate-90"></i> Contact for Price
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Route 3 - Chennai to Kodaikanal -->
+                <div
+                    class="route-card bg-white rounded-xl overflow-hidden shadow-lg text-dark hover:shadow-xl transition duration-300">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.nativeplanet.com/img/2018/01/8-1516875150.jpg"
+                            alt="Chennai to Kodaikanal" class="w-full h-48 object-cover route-image">
+                        <div class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium"
+                            data-i18n="weekendSpecial">
+                            Weekend Special
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 heading-font" data-i18n="chennaiKodaikanal">Chennai to
+                            Kodaikanal</h3>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i class="fas fa-road mr-2 text-primary"></i>
+                            <span>520 km</span>
+                            <i class="fas fa-clock ml-4 mr-2 text-primary"></i>
+                            <span data-i18n="hours9">9 hours</span>
+                        </div>
+                        <div class="text-center py-3">
+                            <a href="#contact"
+                                class="inline-block bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition duration-300"
+                                data-i18n="contactPrice">
+                                <i class="fas fa-phone-alt mr-2 transform rotate-90"></i> Contact for Price
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Route 4 - Coimbatore to Ooty -->
+                <div
+                    class="route-card bg-white rounded-xl overflow-hidden shadow-lg text-dark hover:shadow-xl transition duration-300">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Coimbatore to Ooty" class="w-full h-48 object-cover route-image">
+                        <div class="absolute top-4 left-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-medium"
+                            data-i18n="scenicRoute">
+                            Scenic Route
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 heading-font" data-i18n="coimbatoreOoty">Coimbatore to Ooty
+                        </h3>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i class="fas fa-road mr-2 text-primary"></i>
+                            <span>85 km</span>
+                            <i class="fas fa-clock ml-4 mr-2 text-primary"></i>
+                            <span data-i18n="hours3">3 hours</span>
+                        </div>
+                        <div class="text-center py-3">
+                            <a href="#contact"
+                                class="inline-block bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition duration-300"
+                                data-i18n="contactPrice">
+                                <i class="fas fa-phone-alt mr-2 transform rotate-90"></i> Contact for Price
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Route 5 - Coimbatore to Chennai -->
+                <div
+                    class="route-card bg-white rounded-xl overflow-hidden shadow-lg text-dark hover:shadow-xl transition duration-300">
+                    <div class="relative overflow-hidden">
+                        <img src="https://media.assettype.com/TNIE%2Fimport%2F2021%2F3%2F5%2Foriginal%2FUnauthorised_buildings.jpg?w=480&auto=format%2Ccompress&fit=max"
+                            alt="Coimbatore to Chennai" class="w-full h-48 object-cover route-image">
+                        <div class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium"
+                            data-i18n="expressService">
+                            Express Service
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 heading-font" data-i18n="coimbatoreChennai">Coimbatore to
+                            Chennai</h3>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i class="fas fa-road mr-2 text-primary"></i>
+                            <span>500 km</span>
+                            <i class="fas fa-clock ml-4 mr-2 text-primary"></i>
+                            <span data-i18n="hours8">8 hours</span>
+                        </div>
+                        <div class="text-center py-3">
+                            <a href="#contact"
+                                class="inline-block bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition duration-300"
+                                data-i18n="contactPrice">
+                                <i class="fas fa-phone-alt mr-2 transform rotate-90"></i> Contact for Price
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Route 6 - Coimbatore to Kodaikanal -->
+                <div
+                    class="route-card bg-white rounded-xl overflow-hidden shadow-lg text-dark hover:shadow-xl transition duration-300">
+                    <div class="relative overflow-hidden">
+                        <img src="https://i0.wp.com/oneday.travel/wp-content/uploads/2018/03/one-day-coimbatore-to-kodaikanal-sightseeing-tour-package-by-car-coakers-walk.jpg?resize=750%2C400&ssl=1"
+                            alt="Coimbatore to Kodaikanal" class="w-full h-48 object-cover route-image">
+                        <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-medium"
+                            data-i18n="hillPackage">
+                            Hill Station Package
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 heading-font" data-i18n="coimbatoreKodaikanal">Coimbatore to
+                            Kodaikanal</h3>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i class="fas fa-road mr-2 text-primary"></i>
+                            <span>175 km</span>
+                            <i class="fas fa-clock ml-4 mr-2 text-primary"></i>
+                            <span data-i18n="hours4">4.5 hours</span>
+                        </div>
+                        <div class="text-center py-3">
+                            <a href="#contact"
+                                class="inline-block bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition duration-300"
+                                data-i18n="contactPrice">
+                                <i class="fas fa-phone-alt mr-2 transform rotate-90"></i> Contact for Price
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#contact"
+                    class="inline-block border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-primary transition duration-300"
+                    data-i18n="contactAllRoutes">
+                    <i class="fas fa-headset mr-2"></i> Contact for All Routes
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 heading-font" data-i18n="whyChoose">Why Choose VRK Tours?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="chooseDescription">We go the extra mile to ensure
+                    your journey is comfortable and safe</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 text-center">
+                    <div
+                        class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-xl mb-4 heading-font" data-i18n="safetyFirst">Safety First</h4>
+                    <p class="text-gray-600" data-i18n="safetyDesc">
+                        All our vehicles undergo regular maintenance and our drivers are trained in defensive driving
+                        techniques.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 text-center">
+                    <div
+                        class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-clock text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-xl mb-4 heading-font" data-i18n="onTime">On-Time Guarantee</h4>
+                    <p class="text-gray-600" data-i18n="timeDesc">
+                        We value your time. Our punctuality record is unmatched with 99% on-time arrivals.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 text-center">
+                    <div
+                        class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-rupee-sign text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-xl mb-4 heading-font" data-i18n="transparentPricing">Transparent Pricing
+                    </h4>
+                    <p class="text-gray-600" data-i18n="pricingDesc">
+                        No hidden charges. What you see is what you pay with all taxes and tolls included.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-16 bg-accent text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6 heading-font" data-i18n="needTransport">Need Transportation?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto" data-i18n="freeQuote">
+                Get a free quote for your next trip. Available 24/7 for all your travel needs.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="tel:+919876543210"
+                    class="bg-white text-dark px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition duration-300 inline-block"
+                    data-i18n="callNow">
+                    <i class="fas fa-phone-alt mr-2 transform rotate-90"></i> Call Now
+                </a>
+                <a href="mailto:info@vrktours.com"
+                    class="border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-dark transition duration-300 inline-block"
+                    data-i18n="emailUs">
+                    <i class="fas fa-envelope mr-2"></i> Email Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-12 pb-6">
+        <div class="container mx-auto px-2">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center heading-font">
+                        <i class="fas fa-bus mr-2 text-accent"></i>
+                        <span data-i18n="companyName">VRK Tours and Travels</span>
+                    </h3>
+                    <p class="text-gray-400 mb-4" data-i18n="footerDesc">
+                        Providing reliable cab and bus services across India since 2008.
+                    </p>
+                    <div>
+                        <h4 class="text-white mb-4 heading-font font-bold" data-i18n="signatureLocation">Signature Tours
+                            &
+                            Travels</h4>
+                        <ul class="space-y-4 text-gray-400">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mr-3 text-accent mt-1"></i>
+                                <div>
+                                    <span class="block" data-i18n="mainOfficeAddress">L P Naidu Building, Eltex Company
+                                        Opposite, Bhuvaneshwari Nagar, Gas
+                                        Company, Mettupalayam Main Road, Coimbatore - 641020</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div><br>
+                    <div class="flex space-x-4">
+                        <a href="https://facebook.com/vrktours" target="_blank"
+                            class="text-gray-400 hover:text-white text-xl"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/vrktours" target="_blank"
+                            class="text-gray-400 hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
+
+                        <a href="https://instagram.com/vrktours" target="_blank"
+                            class="text-gray-400 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/company/vrktours" target="_blank"
+                            class="text-gray-400 hover:text-white text-xl"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div id="about">
+                    <h4 class="font-bold mb-4 heading-font" data-i18n="contact">Contact Us</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mr-3 text-accent mt-1"></i>
+                            <div>
+                                <span class="block" data-i18n="branchOfficeAddress1">No.1/61, Puthavedu CKC Road,
+                                    Irandamkattalai, Chennai -
+                                    600128</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mr-3 text-accent mt-1"></i>
+                            <div>
+                                <span class="block" data-i18n="branchOfficeAddress2">No.6/10, Venkateswara Nagar, KSB
+                                    Backside, Narasimhanaickenpalayam, Coimbatore - 641017</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mr-3 text-accent mt-1 transform rotate-90"></i>
+                            <div class="space-y-2">
+                                <a href="tel:+919941666167"
+                                    class="flex items-center hover:text-white transition-colors">
+                                    <span
+                                        class="bg-dark-light rounded-full w-8 h-6 flex items-center justify-center mr-2">
+                                        <i class="fas fa-mobile-alt text-xs text-accent"></i>
+                                    </span>
+                                    +91 99416 66167
+                                </a>
+                                <a href="tel:+918807892337"
+                                    class="flex items-center hover:text-white transition-colors">
+                                    <span
+                                        class="bg-dark-light rounded-full w-8 h-6 flex items-center justify-center mr-2">
+                                        <i class="fas fa-phone text-xs text-accent"></i>
+                                    </span>
+                                    +91 88078 92337
+                                </a>
+                            </div>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-accent"></i>
+                            <a href="mailto:info@vrktours.com" class="hover:text-white transition-colors">
+                                info@vrktours.com
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock mr-3 text-accent"></i>
+                            <div>
+                                <span class="block" data-i18n="support24">24/7 Customer Support</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4 heading-font" data-i18n="quickLinks">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white" data-i18n="home">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white" data-i18n="about">About Us</a></li>
+                        <li><a href="#fleet" class="text-gray-400 hover:text-white" data-i18n="fleet">Our Fleet</a></li>
+                        <li><a href="#routes" class="text-gray-400 hover:text-white" data-i18n="routes">Popular
+                                Routes</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white" data-i18n="specialOffers">Special
+                                Offers</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4 heading-font" data-i18n="services">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#fleet" class="text-gray-400 hover:text-white" data-i18n="airportTransfers">Airport
+                                Transfers</a></li>
+                        <li><a href="#fleet" class="text-gray-400 hover:text-white"
+                                data-i18n="corporateTravel">Corporate
+                                Travel</a></li>
+                        <li><a href="#fleet" class="text-gray-400 hover:text-white" data-i18n="weddingTransport">Wedding
+                                Transportation</a></li>
+                        <li><a href="#routes" class="text-gray-400 hover:text-white" data-i18n="tourPackages">Tour
+                                Packages</a></li>
+                        <li><a href="#routes" class="text-gray-400 hover:text-white"
+                                data-i18n="pilgrimageTours">Pilgrimage
+                                Tours</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 <span data-i18n="companyName">VRK Tours and Travels</span> (P) Ltd. <span
+                        data-i18n="allRights">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language data
+        const languageData = {
+            "en": {
+                "companyName": "VRK Tours & Travels",
+                "home": "Home",
+                "services": "Services",
+                "fleet": "Fleet",
+                "routes": "Routes",
+                "about": "About Us",
+                "contact": "Contact",
+                "premiumServices": "Premium Cab & Bus Services by VRK Tours & Travels",
+                "safeReliable": "Safe, reliable, and comfortable transportation for all your travel needs.",
+                "bookNow": "Book Now",
+                "callForQuote": "Call for Quote",
+                "getQuickQuote": "Get a Quick Quote",
+                "vehicleType": "Vehicle Type",
+                "selectVehicle": "Select Vehicle",
+                "miniSedan": "Mini Sedan (4 seater)",
+                "luxurySedan": "Luxury Sedan (4 seater)",
+                "suv": "SUV (6 seater)",
+                "tempoTraveler": "Tempo Traveler (12 seater)",
+                "pickupDate": "Pickup Date",
+                "returnDate": "Return Date",
+                "pickupLocation": "Pickup Location",
+                "getQuote": "Get Quote",
+                "ourFleet": "Our Fleet",
+                "fleetDescription": "Modern, well-maintained vehicles for every need",
+                "passengers4": "4 Passengers",
+                "bags2": "2 Bags",
+                "startingFrom": "Starting from",
+                "passengers6": "6 Passengers",
+                "bags5": "5 Bags",
+                "passengers13": "13 Passengers",
+                "bags8": "8 Bags",
+                "passengers12": "12 Passengers",
+                "bags10": "10 Bags",
+                "moreVehicles": "More Vehicles Available",
+                "wideRange": "We have a wide range of vehicles to suit all your needs",
+                "viewFleet": "View Full Fleet",
+                "popularRoutes": "Popular Routes",
+                "routesDescription": "Frequently traveled routes with special discounts",
+                "dailyService": "Daily Service",
+                "hours8": "8 hours",
+                "contactPrice": "Contact for Price",
+                "hillSpecial": "Hill Station Special",
+                "hours9": "9.5 hours",
+                "weekendSpecial": "Weekend Special",
+                "scenicRoute": "Scenic Route",
+                "hours3": "3 hours",
+                "expressService": "Express Service",
+                "hillPackage": "Hill Station Package",
+                "hours4": "4.5 hours",
+                "contactAllRoutes": "Contact for All Routes",
+                "whyChoose": "Why Choose VRK Tours?",
+                "chooseDescription": "We go the extra mile to ensure your journey is comfortable and safe",
+                "safetyFirst": "Safety First",
+                "safetyDesc": "All our vehicles undergo regular maintenance and our drivers are trained in defensive driving techniques.",
+                "onTime": "On-Time Guarantee",
+                "timeDesc": "We value your time. Our punctuality record is unmatched with 99% on-time arrivals.",
+                "transparentPricing": "Transparent Pricing",
+                "pricingDesc": "No hidden charges. What you see is what you pay with all taxes and tolls included.",
+                "needTransport": "Need Transportation?",
+                "freeQuote": "Get a free quote for your next trip. Available 24/7 for all your travel needs.",
+                "callNow": "Call Now",
+                "emailUs": "Email Us",
+                "signatureLocation": "Signature Tours & Travels",
+                "quickLinks": "Quick Links",
+                "specialOffers": "Special Offers",
+                "footerDesc": "Providing reliable cab and bus services across India since 2008.",
+                "airportTransfers": "Airport Transfers",
+                "corporateTravel": "Corporate Travel",
+                "weddingTransport": "Wedding Transportation",
+                "tourPackages": "Tour Packages",
+                "pilgrimageTours": "Pilgrimage Tours",
+                "mainOfficeAddress": "L P Naidu Building, Eltex Company Opposite, Bhuvaneshwari Nagar, Gas Company, Mettupalayam Main Road, Coimbatore - 641020",
+                "contact": "Contact Us",
+                "branchOfficeAddress1": "No.1/61, Puthavedu CKC Road, Irandamkattalai, Chennai - 600128",
+                "branchOfficeAddress2": "No.6/10, Venkateswara Nagar, KSB Backside, Narasimhanaickenpalayam, Coimbatore - 641017",
+                "support24": "24/7 Customer Support",
+                "allRights": "All rights reserved.",
+                "chennaiCoimbatore": "Chennai - Coimbatore",
+                "chennaiOoty": "Chennai - Ooty",
+                "chennaiKodaikanal": "Chennai - Kodaikanal",
+                "coimbatoreOoty": "Coimbatore - Ooty",
+                "coimbatoreChennai": "Coimbatore - Chennai",
+                "coimbatoreKodaikanal": "Coimbatore - Kodaikanal",
+                "premiumSUV": "Premium SUV (6 Seater)",
+                "pickupLocationPlaceholder": "Enter pickup location"
+            },
+            "ta": {
+                "companyName": "விஆர்கே சுற்றுலா & பயணங்கள்",
+                "home": "முகப்பு",
+                "services": "சேவைகள்",
+                "fleet": "வாகனங்கள்",
+                "routes": "பாதைகள்",
+                "about": "எங்களைப் பற்றி",
+                "contact": "தொடர்பு",
+                "premiumServices": "விஆர்கே-வின் பிரீமியம் கேப் & பேருந்து சேவைகள்",
+                "safeReliable": "உங்கள் அனைத்து பயண தேவைகளுக்கும் பாதுகாப்பான, நம்பகமான மற்றும் வசதியான போக்குவரத்து.",
+                "bookNow": "இப்போதே பதிவு செய்க",
+                "callForQuote": "விலை கேட்டறிய அழைக்கவும்",
+                "getQuickQuote": "விரைவான விலை மதிப்பீட்டைப் பெறவும்",
+                "vehicleType": "வாகன வகை",
+                "selectVehicle": "வாகனத்தைத் தேர்ந்தெடுக்கவும்",
+                "miniSedan": "மினி செடான் (4 இருக்கைகள்)",
+                "luxurySedan": "லக்ஷரி செடான் (4 இருக்கைகள்)",
+                "suv": "எஸ்யுவி (6 இருக்கைகள்)",
+                "premiumSUV": "பிரீமியம் எஸ்யுவி (6 இருக்கைகள்)",
+                "tempoTraveler": "டெம்போ டிராவலர் (12 இருக்கைகள்)",
+                "miniBus": "மினி பஸ்",
+                "passengers12": "12 பயணிகள்",
+                "bags10": "10 பைகள்",
+                "pickupDate": "பிக்அப் தேதி",
+                "date_placeholder": "மாா்/தி/ஆஆஆஆ",
+                "returnDate": "திரும்பும் தேதி",
+                "pickupLocation": "பிக்அப் இடம்",
+                "pickupLocationPlaceholder": "பிக்அப் இடம் உள்ளிடவும்",
+                "getQuote": "விலை மதிப்பீட்டைப் பெறவும்",
+                "ourFleet": "எங்கள் வாகனங்கள்",
+                "fleetDescription": "எல்லா தேவைகளுக்கும் நவீன, நன்கு பராமரிக்கப்பட்டவுமான வாகனங்கள் – உங்கள் தேவைகளுக்கேற்ப",
+                "passengers4": "4 பயணிகள்",
+                "bags2": "2 பைகள்",
+                "startingFrom": "தொடங்கும் விலை",
+                "passengers6": "6 பயணிகள்",
+                "bags5": "5 பைகள்",
+                "passengers13": "13 பயணிகள்",
+                "bags8": "8 பைகள்",
+                "passengers12": "12 பயணிகள்",
+                "bags10": "10 பைகள்",
+                "moreVehicles": "மேலும் வாகனங்கள் உள்ளன",
+                "wideRange": "உங்கள் அனைத்து தேவைகளுக்கும் ஏற்ற வகையில் பல வாகனங்கள் எங்களிடம் உள்ளன",
+                "viewFleet": "முழு வாகனங்களைக் காண்க",
+                "popularRoutes": "பிரபலமான பாதைகள்",
+                "routesDescription": "சிறப்பு தள்ளுபடியுடன் அடிக்கடி பயணிக்கும் பாதைகள்",
+                "dailyService": "தினசரி சேவை",
+                "hours8": "8 மணி நேரம்",
+                "contactPrice": "விலைக்கு தொடர்பு கொள்ள",
+                "hillSpecial": "மலைவாசல் சிறப்பு",
+                "hours9": "9.5 மணி நேரம்",
+                "weekendSpecial": "வார இறுதி சிறப்பு",
+                "scenicRoute": "அழகிய பாதை",
+                "hours3": "3 மணி நேரம்",
+                "expressService": "எக்ஸ்பிரஸ் சேவை",
+                "hillPackage": "மலைவாசல் தொகுப்பு",
+                "hours4": "4.5 மணி நேரம்",
+                "contactAllRoutes": "அனைத்து பாதைகளுக்கும் தொடர்பு கொள்ள",
+                "whyChoose": "ஏன் விஆர்கே சுற்றுலாவை தேர்வு செய்ய வேண்டும்?",
+                "chooseDescription": "உங்கள் பயணம் வசதியாகவும் பாதுகாப்பாகவும் இருக்கும் வகையில் கூடுதல் முயற்சி எடுக்கிறோம்",
+                "safetyFirst": "முதலில் பாதுகாப்பு",
+                "safetyDesc": "எங்கள் அனைத்து வாகனங்களும் வழக்கமான பராமரிப்பிற்கு உட்படுத்தப்படுகின்றன மற்றும் எங்கள் ஓட்டுநர்கள் பாதுகாப்பு ஓட்டுநர் நுட்பங்களில் பயிற்சி பெற்றவர்கள்.",
+                "onTime": "நேரத்திற்கு உத்தரவாதம்",
+                "timeDesc": "உங்கள் நேரத்தை நாங்கள் மதிக்கிறோம். எங்கள் நேரத்திற்கு வரும் பதிவு 99% நேரத்திற்கு வருவதுடன் ஒப்பிட முடியாதது.",
+                "transparentPricing": "வெளிப்படையான விலை நிர்ணயம்",
+                "pricingDesc": "மறைந்த கட்டணங்கள் எதுவுமில்லை. உங்கள் விலையில் அனைத்து வரிகள் மற்றும் சுங்கக் கட்டணங்களும் உள்ளடங்கியவை.",
+                "needTransport": "போக்குவரத்து தேவையா?",
+                "freeQuote": "உங்கள் அடுத்த பயணத்திற்கான இலவச மதிப்பீட்டைப் பெறவும். உங்கள் அனைத்து பயணத் தேவைகளுக்கும் 24/7 கிடைக்கும்.",
+                "callNow": "இப்போது அழைக்கவும்",
+                "emailUs": "எங்களுக்கு மின்னஞ்சல் அனுப்பவும்",
+                "signatureLocation": "முக்கிய இருப்பிடம்",
+                "mainOfficeAddress": "எல்.பி. நாயுடு கட்டிடம், எல்டெக்ஸ் நிறுவனம் எதிரே, புவனேஸ்வரி நகர், கேஸ் நிறுவனம், மெட்டுப்பாளையம் மேன் ரோடு, கோயம்புத்தூர் - 641020",
+                "quickLinks": "விரைவு இணைப்புகள்",
+                "specialOffers": "சிறப்பு சலுகைகள்",
+                "footerDesc": "2008 முதல் இந்தியா முழுவதும் நம்பகமான கேப் மற்றும் பஸ் சேவைகளை வழங்குகிறோம்.",
+                "airportTransfers": "விமான நிலைய பரிமாற்றங்கள்",
+                "corporateTravel": "கார்ப்பரேட் பயணம்",
+                "weddingTransport": "திருமண போக்குவரத்து",
+                "tourPackages": "சுற்றுலா தொகுப்புகள்",
+                "pilgrimageTours": "தல யாத்திரை",
+                "support24": "24/7 வாடிக்கையாளர் ஆதரவு",
+                "allRights": "அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
+                "chennaiCoimbatore": "சென்னை - கோயம்புத்தூர்",
+                "chennaiOoty": "சென்னை - ஊட்டி",
+                "chennaiKodaikanal": "சென்னை - கொடைக்கானல்",
+                "coimbatoreOoty": "கோயம்புத்தூர் - ஊட்டி",
+                "coimbatoreChennai": "கோயம்புத்தூர் - சென்னை",
+                "coimbatoreKodaikanal": "கோயம்புத்தூர் - கொடைக்கானல்",
+                "contact": "அணுகவும்",
+                "branchOfficeAddress1": "எண் 1/61, புதவேடு சிகேசி சாலை, இரண்டாம்கட்டளை, சென்னை - 600128",
+                "branchOfficeAddress2": "எண்.6/10, வெங்கடேஸ்வர நகர், கே.எஸ்.பி பின்புறம், நரசிம்மநாயக்கன்பாளையம், கோயம்புத்தூர் - 641017"
+            }
+        };
+
+        // Set default language
+        let currentLanguage = localStorage.getItem('language') || 'en';
+
+        // Function to update all translatable elements
+        function updateLanguage() {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (languageData[currentLanguage][key]) {
+                    if (element.tagName === 'INPUT' && element.hasAttribute('placeholder')) {
+                        element.placeholder = languageData[currentLanguage][key];
+                    } else if (element.tagName === 'OPTION') {
+                        element.textContent = languageData[currentLanguage][key];
+                    } else {
+                        element.textContent = languageData[currentLanguage][key];
+                    }
+                }
+            });
+
+            // Update toggle switch state
+            document.getElementById('language-toggle').checked = currentLanguage === 'ta';
+            document.getElementById('mobile-language-toggle').checked = currentLanguage === 'ta';
+
+            // Update active language labels
+            document.getElementById('en-label').classList.toggle('active-language', currentLanguage === 'en');
+            document.getElementById('ta-label').classList.toggle('active-language', currentLanguage === 'ta');
+            document.getElementById('mobile-en-label').classList.toggle('active-language', currentLanguage === 'en');
+            document.getElementById('mobile-ta-label').classList.toggle('active-language', currentLanguage === 'ta');
+
+            // Set the HTML lang attribute
+            document.documentElement.lang = currentLanguage;
+        }
+
+        // Initialize language
+        updateLanguage();
+
+        // Toggle language switch
+        document.getElementById('language-toggle').addEventListener('change', function () {
+            currentLanguage = this.checked ? 'ta' : 'en';
+            localStorage.setItem('language', currentLanguage);
+            updateLanguage();
+        });
+
+        // Mobile toggle language switch
+        document.getElementById('mobile-language-toggle').addEventListener('change', function () {
+            currentLanguage = this.checked ? 'ta' : 'en';
+            localStorage.setItem('language', currentLanguage);
+            document.getElementById('language-toggle').checked = this.checked;
+            updateLanguage();
+        });
+
+        // Sync main toggle with mobile toggle
+        document.getElementById('language-toggle').addEventListener('change', function () {
+            document.getElementById('mobile-language-toggle').checked = this.checked;
+        });
+
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function () {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Form submission handling
+        document.getElementById('booking').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert(currentLanguage === 'en'
+                ? 'Thank you for your booking request! We will contact you shortly with a quote.'
+                : 'உங்கள் முன்பதிவு கோரிக்கைக்கு நன்றி! விரைவில் ஒரு மதிப்பீட்டுடன் உங்களைத் தொடர்புகொள்வோம்.');
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
